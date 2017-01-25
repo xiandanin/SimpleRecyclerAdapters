@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 
-import com.dyhdyh.adapter.example.adapter.recyclerview.TextAdapter;
+import com.dyhdyh.adapter.example.adapters.TextAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         TextAdapter textAdapter=new TextAdapter(data);
 
         rv.setLayoutManager(new LinearLayoutManager(this));
-        //rv.setAdapter(new RecyclerViewAdapterWrapper(textAdapter));
+        rv.setAdapter(textAdapter);
     }
 
     private List<String> getTestData(){
