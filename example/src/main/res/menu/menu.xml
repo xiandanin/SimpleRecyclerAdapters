@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_add"
+        android:onClick="clickAddItem"
+        android:title="添加Item"></item>
+    <item
+        android:id="@+id/menu_add_all"
+        android:onClick="clickAddAllItem"
+        android:title="添加多个Item"></item>
+    <item
+        android:id="@+id/menu_remove"
+        android:onClick="clickRemoveItem"
+        android:title="删除Item"></item>
+    <item
+        android:id="@+id/menu_remove_all"
+        android:onClick="clickRemoveAllItem"
+        android:title="删除多个Item"></item>
+    <item
+        android:id="@+id/menu_clear"
+        android:onClick="clickClearItem"
+        android:title="清空"></item>
+</menu>

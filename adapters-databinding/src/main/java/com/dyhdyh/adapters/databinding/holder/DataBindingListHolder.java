@@ -1,15 +1,16 @@
-package com.dyhdyh.adapters.databinding;
+package com.dyhdyh.adapters.databinding.holder;
 
 import android.databinding.ViewDataBinding;
 import android.view.View;
 
-import com.dyhdyh.adapters.adapterview.ViewHolder;
+import com.dyhdyh.adapters.AbstractListAdapter;
+
 
 /**
  * author  dengyuhan
  * created 2016/8/9 11:28
  */
-public class DataBindingListHolder<B extends ViewDataBinding> extends ViewHolder {
+public class DataBindingListHolder<B extends ViewDataBinding> extends AbstractListAdapter.ViewHolder {
     public B binding;
 
     public DataBindingListHolder(B binding) {

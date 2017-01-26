@@ -5,7 +5,8 @@ import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.dyhdyh.adapters.recyclerview.AbstractRecyclerAdapter;
+import com.dyhdyh.adapters.AbstractRecyclerAdapter;
+import com.dyhdyh.adapters.databinding.holder.DataBindingRecyclerHolder;
 
 import java.util.List;
 

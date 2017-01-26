@@ -1,19 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <TextView
+        android:text="通用Adapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-    <ListView
-        android:id="@+id/lv"
-        android:layout_weight="1"
+    <Button
+        android:text="单样式例子"
+        android:onClick="clickAdapter"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="多样式例子(RecyclerView)"
+        android:onClick="clickMultifyRecyclerAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="多样式例子(ListView)"
+        android:onClick="clickMultifyListAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:text="支持DataBinding的Adapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="单样式例子"
+        android:onClick="clickDataBindingAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:text="多样式例子(RecyclerView)"
+        android:onClick="clickDataBindingMultifyRecyclerAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="多样式例子(ListView)"
+        android:onClick="clickDataBindingMultifyListAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

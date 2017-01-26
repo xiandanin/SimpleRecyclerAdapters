@@ -1,4 +1,4 @@
-package com.dyhdyh.adapters.recyclerview;
+package com.dyhdyh.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,11 +8,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * 基本的recylerview适配器
- *
- * @author dengyuhan
- * @desc
- * @create 2016/6/8 9:04
+ * author  dengyuhan
+ * created 2017/1/26 14:42
  */
 public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
     private List<T> mData;
@@ -53,8 +50,8 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
     /**
      * 获取条目数据
      *
-     * @param position
-     * @return
+     * @param position 要获取的对象在适配器中的位置
+     * @return position位置的对象
      */
     public T getItem(int position) {
         return mData.get(position);
@@ -63,7 +60,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
     /**
      * 添加一个条目
      *
-     * @param item
+     * @param item 要添加的数据
      */
     public void addItem(T item) {
         mData.add(item);
@@ -73,8 +70,8 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
     /**
      * 添加一个条目到position位置
      *
-     * @param position
-     * @param item
+     * @param position 指定的位置
+     * @param item 要添加的数据
      */
     public void addItem(int position, T item) {
         mData.add(position, item);
@@ -84,7 +81,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
     /**
      * 添加多个条目
      *
-     * @param collection
+     * @param collection 要添加的数据集合
      */
     public void addItemAll(Collection<? extends T> collection) {
         int oldSize = mData.size();
@@ -95,8 +92,8 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
     /**
      * 添加多个条目到position位置
      *
-     * @param position
-     * @param collection
+     * @param position 指定的位置
+     * @param collection 要添加的数据集合
      */
     public void addItemAll(int position, Collection<? extends T> collection) {
         mData.addAll(position, collection);
@@ -107,7 +104,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
      * 删除一个条目
      * <p>为了避免notifyItemRemoved后导致position错乱,所以再调用notifyItemRangeChanged刷新position</p>
      *
-     * @param position
+     * @param position 要删除的位置
      */
     public void removeItem(int position) {
         mData.remove(position);
@@ -119,11 +116,11 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
     /**
      * 删除多个条目
      *
-     * @param collection
+     * @param collection 要删除的数据集合
      */
     public void removeItemAll(Collection<? extends T> collection) {
         mData.removeAll(collection);
-        notifyItemRangeRemoved(mData.size(), collection.size());
+        notifyDataSetChanged();
     }
 
     /**
@@ -160,7 +157,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
      * 条目长按
      */
     public interface OnItemLongClickListener {
-        boolean onItemLongClick(View view, int position);
+        boolean onItemLongClick(AbstractRecyclerAdapter adapter,View view, int position);
     }
 
 
@@ -190,7 +187,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
 
         @Override
         public boolean onLongClick(View v) {
-            return mAdapter.mItemLongClickListener.onItemLongClick(v, mPosition);
+            return mAdapter.mItemLongClickListener.onItemLongClick(mAdapter,v, mPosition);
         }
     }
 

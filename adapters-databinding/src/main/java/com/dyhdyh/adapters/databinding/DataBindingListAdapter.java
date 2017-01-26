@@ -5,7 +5,8 @@ import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.dyhdyh.adapters.adapterview.AbstractListAdapter;
+import com.dyhdyh.adapters.AbstractListAdapter;
+import com.dyhdyh.adapters.databinding.holder.DataBindingListHolder;
 
 import java.util.List;
 

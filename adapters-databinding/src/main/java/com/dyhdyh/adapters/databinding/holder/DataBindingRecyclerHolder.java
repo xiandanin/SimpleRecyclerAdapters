@@ -1,4 +1,4 @@
-package com.dyhdyh.adapters.databinding;
+package com.dyhdyh.adapters.databinding.holder;
 
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
@@ -12,7 +12,7 @@ public class DataBindingRecyclerHolder<B extends ViewDataBinding> extends Recycl
     public B binding;
 
     public DataBindingRecyclerHolder(B binding) {
-        super(binding.getRoot());
+        this(binding.getRoot());
         this.binding = binding;
     }
 

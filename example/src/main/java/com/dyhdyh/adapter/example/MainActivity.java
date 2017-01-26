@@ -1,41 +1,73 @@
 package com.dyhdyh.adapter.example;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.ListView;
+import android.view.View;
 
-import com.dyhdyh.adapter.example.adapters.TextAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * author  dengyuhan
+ * created 2017/1/26 16:06
+ */
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView rv;
-    private ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rv= (RecyclerView) findViewById(R.id.rv);
-        lv= (ListView) findViewById(R.id.lv);
-
-        List<String> data = getTestData();
-        TextAdapter textAdapter=new TextAdapter(data);
-
-        rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setAdapter(textAdapter);
     }
 
-    private List<String> getTestData(){
-        List<String> data=new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            data.add("Item "+i);
-        }
-        return data;
+    /**
+     * 通用的Adapter例子
+     * @param v
+     */
+    public void clickAdapter(View v){
+        startActivity(new Intent(this,GeneralActivity.class));
     }
+
+    /**
+     * 支持DataBinding的通用Adapter例子
+     * @param v
+     */
+    public void clickDataBindingAdapter(View v){
+        startActivity(new Intent(this,DataBindingActivity.class));
+    }
+
+    /**
+     * 多样式的RecyclerView Adapter
+     * @param v
+     */
+    public void clickMultifyRecyclerAdapter(View v){
+        startActivity(new Intent(this,MultifyActivity.class));
+    }
+
+    /**
+     * 多样式的List Adapter
+     * @param v
+     */
+    public void clickMultifyListAdapter(View v){
+        startActivity(new Intent(this,MultifyListActivity.class));
+    }
+
+
+    /**
+     * 支持DataBinding多样式的RecyclerView Adapter
+     * @param v
+     */
+    public void clickDataBindingMultifyRecyclerAdapter(View v){
+        startActivity(new Intent(this,DataBindingMultifyActivity.class));
+    }
+
+    /**
+     * 支持DataBinding多样式的List Adapter
+     * @param v
+     */
+    public void clickDataBindingMultifyListAdapter(View v){
+        startActivity(new Intent(this,DataBindingMultifyListActivity.class));
+    }
+
+
+
 }

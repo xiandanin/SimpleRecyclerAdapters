@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dyhdyh.adapter.example">
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".GeneralActivity"
+            android:label="单样式Adapter"></activity>
+        <activity
+            android:name=".MultifyActivity"
+            android:label="多样式RecyclerAdapter"></activity>
+        <activity
+            android:name=".MultifyListActivity"
+            android:label="多样式ListAdapter"></activity>
+
+        <activity android:name=".DataBindingActivity"
+            android:label="DataBinding单样式Adapter"></activity>
+        <activity android:name=".DataBindingMultifyActivity"
+            android:label="DataBinding多样式RecyclerAdapter"></activity>
+        <activity android:name=".DataBindingMultifyListActivity"
+            android:label="DataBinding多样式ListAdapter"></activity>
     </application>
 
 </manifest>

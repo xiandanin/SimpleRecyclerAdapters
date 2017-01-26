@@ -1,36 +1,38 @@
 package ${packageName};
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import ${superAdapterClassFqcn};
 
 import java.util.List;
+import ${applicationPackage}.R;
 
-public class ${adapterClass} extends ${superAdapterClass}<${modelClass},${adapterClass}.Holder> {
+public class ${adapterClass} extends ${superAdapterClass}<${modelClass},${adapterClass}.ItemViewHolder> {
 
     public ${adapterClass}(List<${modelClass}> data) {
         super(data);
     }
 
     @Override
-    public void onBindViewHolder(Holder holder, int position, ${modelClass} item) {
+    public void onBindViewHolder(ItemViewHolder holder, int position, ${modelClass} item) {
 
     }
 
     @Override
-    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 	<#if generateLayout>
-        return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.${layoutName}, parent, false));
+        return new ItemViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.${layoutName}, parent, false));
 	<#else>
         return null;
 	</#if>
     }
 
-    protected static class Holder extends RecyclerView.ViewHolder{
+    protected static class ItemViewHolder extends RecyclerView.ViewHolder{
 
-        public Holder(View itemView) {
+        public ItemViewHolder(View itemView) {
             super(itemView);
         }
     }
