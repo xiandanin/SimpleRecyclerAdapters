@@ -1,9 +1,11 @@
 # android-adapters
 
+###示例截图
+![](/screenshots/example.png)
 
 ###示例apk
 [下载](https://github.com/dengyuhan/android-adapters/releases/download/1.0.0/example_1.0.0.apk)<br/>
-![](https://github.com/dengyuhan/android-adapters/blob/master/screenshots/qrcode.png)
+![](/screenshots/qrcode.png)
 
 ##快速开始
 
@@ -31,15 +33,15 @@ Mac：/Applications/Android Studio.app/Contents/plugins/android/lib/templates
 <br/>
 
 ###快速生成
-![](https://github.com/dengyuhan/android-adapters/blob/master/screenshots/new_adapter.png)<br/>
-![](https://github.com/dengyuhan/android-adapters/blob/master/screenshots/new_adapter_2.png)<br/>
+![](/screenshots/new_adapter.png)<br/>
+![](/screenshots/new_adapter_2.png)<br/>
 ###生成出来的代码
 体力活都自动做好了,我们要写的就只有绑定数据了<br/>
-![](https://github.com/dengyuhan/android-adapters/blob/master/screenshots/new_adapter_3.png)<br/>
+![](/screenshots/new_adapter_3.png)<br/>
 <br/>
 ###RecyclerView和ListView的相互转换
 当需要将RecyclerAdapter转成ListAdapter的时候,把这两个类名改一下就可以了<br/>
-![](https://github.com/dengyuhan/android-adapters/blob/master/screenshots/new_adapter_4.png)<br/>
+![](/screenshots/new_adapter_4.png)<br/>
 <br/>
 
 ####更多用法可以看例子工程
