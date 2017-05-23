@@ -1,7 +1,10 @@
 package com.dyhdyh.adapters;
 
+import android.support.annotation.LayoutRes;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -71,7 +74,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
      * 添加一个条目到position位置
      *
      * @param position 指定的位置
-     * @param item 要添加的数据
+     * @param item     要添加的数据
      */
     public void addItem(int position, T item) {
         mData.add(position, item);
@@ -92,7 +95,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
     /**
      * 添加多个条目到position位置
      *
-     * @param position 指定的位置
+     * @param position   指定的位置
      * @param collection 要添加的数据集合
      */
     public void addItemAll(int position, Collection<? extends T> collection) {
@@ -157,7 +160,7 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
      * 条目长按
      */
     public interface OnItemLongClickListener {
-        boolean onItemLongClick(AbstractRecyclerAdapter adapter,View view, int position);
+        boolean onItemLongClick(AbstractRecyclerAdapter adapter, View view, int position);
     }
 
 
@@ -187,8 +190,21 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
 
         @Override
         public boolean onLongClick(View v) {
-            return mAdapter.mItemLongClickListener.onItemLongClick(mAdapter,v, mPosition);
+            return mAdapter.mItemLongClickListener.onItemLongClick(mAdapter, v, mPosition);
         }
     }
 
+
+    public static abstract class RecyclerHolder<T> extends RecyclerView.ViewHolder {
+
+        public RecyclerHolder(View itemView) {
+            super(itemView);
+        }
+
+        public RecyclerHolder(ViewGroup parent, @LayoutRes int layoutId) {
+            this(LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false));
+        }
+
+        public abstract void onBindViewHolder(T item, int position);
+    }
 }
