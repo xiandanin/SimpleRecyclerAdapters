@@ -205,6 +205,6 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
             this(LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false));
         }
 
-        public abstract void onBindViewHolder(T item, int position);
+        public abstract void onBindViewHolder(int position, T item);
     }
 }
