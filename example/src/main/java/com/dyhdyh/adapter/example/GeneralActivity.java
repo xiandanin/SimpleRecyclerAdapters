@@ -7,12 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dyhdyh.adapter.example.adapters.TextAdapter;
-import com.dyhdyh.adapter.example.adapters.TextListAdapter;
 import com.dyhdyh.adapters.AbstractRecyclerAdapter;
 
 import java.util.ArrayList;
@@ -22,10 +19,8 @@ import java.util.List;
 public class GeneralActivity extends AppCompatActivity {
 
     private RecyclerView rv;
-    private ListView lv;
 
     private TextAdapter textAdapter;
-    private TextListAdapter textListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +29,6 @@ public class GeneralActivity extends AppCompatActivity {
 
 
         rv= (RecyclerView) findViewById(R.id.rv);
-        lv= (ListView) findViewById(R.id.lv);
 
         rv.setLayoutManager(new LinearLayoutManager(this));
         //普通RecyclerView Adapter
@@ -55,25 +49,6 @@ public class GeneralActivity extends AppCompatActivity {
             }
         });
         rv.setAdapter(textAdapter);
-
-        //普通ListView Adapter
-        textListAdapter=new TextListAdapter(DataUtils.getTextData());
-        lv.setAdapter(textListAdapter);
-        //ItemClick
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(GeneralActivity.this, "Click "+parent.getAdapter().getItem(position), Toast.LENGTH_SHORT).show();
-            }
-        });
-        //ItemLongClick
-        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(GeneralActivity.this, "Long Click "+parent.getAdapter().getItem(position), Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
     }
 
     @Override
@@ -88,7 +63,6 @@ public class GeneralActivity extends AppCompatActivity {
      */
     public void clickAddItem(MenuItem item){
         textAdapter.addItem(0,"Add Item "+textAdapter.getItemCount());
-        textListAdapter.addItem(0,"Add Item "+textListAdapter.getCount());
     }
 
     /**
@@ -102,7 +76,6 @@ public class GeneralActivity extends AppCompatActivity {
         }
 
         textAdapter.addItemAll(0,add);
-        textListAdapter.addItemAll(0,add);
     }
 
     /**
@@ -111,7 +84,6 @@ public class GeneralActivity extends AppCompatActivity {
      */
     public void clickRemoveItem(MenuItem item){
         textAdapter.removeItem(0);
-        textListAdapter.removeItem(0);
     }
 
     /**
@@ -125,7 +97,6 @@ public class GeneralActivity extends AppCompatActivity {
         }
 
         textAdapter.removeItemAll(remove);
-        textListAdapter.removeItemAll(remove);
     }
 
     /**
@@ -134,6 +105,5 @@ public class GeneralActivity extends AppCompatActivity {
      */
     public void clickClearItem(MenuItem item){
         textAdapter.clear();
-        textListAdapter.clear();
     }
 }

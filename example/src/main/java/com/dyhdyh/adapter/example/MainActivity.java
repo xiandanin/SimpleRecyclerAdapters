@@ -43,14 +43,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this,MultifyActivity.class));
     }
 
-    /**
-     * 多样式的List Adapter
-     * @param v
-     */
-    public void clickMultifyListAdapter(View v){
-        startActivity(new Intent(this,MultifyListActivity.class));
-    }
-
 
     /**
      * 支持DataBinding多样式的RecyclerView Adapter
@@ -58,14 +50,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void clickDataBindingMultifyRecyclerAdapter(View v){
         startActivity(new Intent(this,DataBindingMultifyActivity.class));
-    }
-
-    /**
-     * 支持DataBinding多样式的List Adapter
-     * @param v
-     */
-    public void clickDataBindingMultifyListAdapter(View v){
-        startActivity(new Intent(this,DataBindingMultifyListActivity.class));
     }
 
 

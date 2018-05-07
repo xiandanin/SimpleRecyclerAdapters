@@ -1,0 +1,44 @@
+ext {
+    android =
+            [
+                    //版本号
+                    versionCode      : 2,
+                    versionName      : "1.1.0-beta",
+
+                    //sdk版本
+                    compileSdkVersion: 26,
+                    buildToolsVersion: "26.0.3",
+                    minSdkVersion    : 19,
+                    targetSdkVersion : 26,
+                    supportVersion   : "26.1.0",
+            ]
+
+    jcenter =
+            [
+                    //项目名称
+                    name       : "simple-recycler-adapters",
+                    name_databinding       : "simple-recycler-adapters-databinding",
+                    groupId    : "com.dyhdyh",
+                    //项目地址
+                    siteUrl    : "https://github.com/dengyuhan/SimpleRecyclerAdapters",
+                    //项目git地址
+                    gitUrl     : "https://github.com/dengyuhan/SimpleRecyclerAdapters.git",
+                    //项目描述
+                    description: "简易的RecyclerView Adapter，支持DataBinding",
+                    //开发者的一些基本信息
+                    authorId   : "dengyuhan",
+                    authorName : "dengyuhan",
+                    authorEmail: "22309946@qq.com",
+
+                    //开源协议
+                    licenses   : {
+                        license {
+                            name 'Apache-2.0'
+                            url 'https://opensource.org/licenses/Apache-2.0'
+                        }
+                    },
+                    licenseName: 'Apache-2.0'
+            ]
+
+
+}

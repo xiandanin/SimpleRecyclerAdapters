@@ -1,1 +1,1 @@
-include ':example', ':adapters', ':adapters-databinding'
+include ':example', ':simple-recycler-adapters', ':simple-recycler-adapters-databinding'
