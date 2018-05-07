@@ -16,8 +16,8 @@ ext {
     jcenter =
             [
                     //项目名称
-                    name       : "simple-recycler-adapters",
-                    name_databinding       : "simple-recycler-adapters-databinding",
+                    name       : "recycler-adapters",
+                    name_databinding       : "recycler-adapters-databinding",
                     groupId    : "com.dyhdyh",
                     //项目地址
                     siteUrl    : "https://github.com/dengyuhan/SimpleRecyclerAdapters",

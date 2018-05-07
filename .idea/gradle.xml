@@ -9,8 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/example" />
-            <option value="$PROJECT_DIR$/simple-recycler-adapters" />
-            <option value="$PROJECT_DIR$/simple-recycler-adapters-databinding" />
+            <option value="$PROJECT_DIR$/recycler-adapters" />
+            <option value="$PROJECT_DIR$/recycler-adapters-databinding" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

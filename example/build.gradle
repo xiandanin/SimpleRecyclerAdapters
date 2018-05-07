@@ -21,6 +21,6 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.android.supportVersion"
     implementation "com.android.support:recyclerview-v7:$rootProject.ext.android.supportVersion"
 
-    implementation project(':simple-recycler-adapters-databinding')
-    implementation project(':simple-recycler-adapters')
+    implementation project(':recycler-adapters-databinding')
+    implementation project(':recycler-adapters')
 }

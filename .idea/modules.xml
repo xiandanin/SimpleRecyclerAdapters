@@ -10,8 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/example/app.iml" filepath="$PROJECT_DIR$/example/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simple-recycler-adapters/adapters.iml" filepath="$PROJECT_DIR$/simple-recycler-adapters/adapters.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simple-recycler-adapters-databinding/adapters-databinding.iml" filepath="$PROJECT_DIR$/simple-recycler-adapters-databinding/adapters-databinding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recycler-adapters/recycler-adapters.iml" filepath="$PROJECT_DIR$/recycler-adapters/recycler-adapters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recycler-adapters-databinding/recycler-adapters-databinding.iml" filepath="$PROJECT_DIR$/recycler-adapters-databinding/recycler-adapters-databinding.iml" />
     </modules>
   </component>
 </project>
