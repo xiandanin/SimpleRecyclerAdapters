@@ -7,6 +7,7 @@ android{
     }
 }
 dependencies {
+    compileOnly "com.android.support:appcompat-v7:$rootProject.ext.android.supportVersion"
     compileOnly "com.android.support:recyclerview-v7:$rootProject.ext.android.supportVersion"
     compileOnly project(':recycler-adapters')
 }

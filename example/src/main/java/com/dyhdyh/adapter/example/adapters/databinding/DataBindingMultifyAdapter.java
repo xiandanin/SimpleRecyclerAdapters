@@ -9,7 +9,7 @@ import com.dyhdyh.adapter.example.databinding.ItemDatabindingMultifyFromBinding;
 import com.dyhdyh.adapter.example.databinding.ItemDatabindingMultifyTimeBinding;
 import com.dyhdyh.adapter.example.databinding.ItemDatabindingMultifyToBinding;
 import com.dyhdyh.adapter.example.model.ItemInfo;
-import com.dyhdyh.adapters.AbstractRecyclerAdapter;
+import com.dyhdyh.adapters.BaseRecyclerAdapter;
 import com.dyhdyh.adapters.databinding.holder.DataBindingRecyclerHolder;
 
 import java.text.SimpleDateFormat;
@@ -20,7 +20,7 @@ import java.util.List;
  * author  dengyuhan
  * created 2017/1/26 22:12
  */
-public class DataBindingMultifyAdapter extends AbstractRecyclerAdapter<ItemInfo, DataBindingRecyclerHolder> {
+public class DataBindingMultifyAdapter extends BaseRecyclerAdapter<ItemInfo, DataBindingRecyclerHolder> {
     private static final int VIEWTYPE_FROM = 1;
     private static final int VIEWTYPE_TO = 0;
     private static final int VIEWTYPE_TIME = 2;

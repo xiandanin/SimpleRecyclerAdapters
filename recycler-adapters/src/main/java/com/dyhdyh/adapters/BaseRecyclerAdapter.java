@@ -11,12 +11,12 @@ import java.util.List;
  * author  dengyuhan
  * created 2017/1/26 14:42
  */
-public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
+public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
     private List<T> mData;
     private OnItemClickListener mOnItemClickListener;
     private OnItemLongClickListener mItemLongClickListener;
 
-    public AbstractRecyclerAdapter(List<T> data) {
+    public BaseRecyclerAdapter(List<T> data) {
         this.mData = data == null ? new ArrayList<T>() : data;
     }
 
@@ -163,22 +163,22 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
      * 条目点击
      */
     public interface OnItemClickListener {
-        void onItemClick(AbstractRecyclerAdapter adapter, View view, int position);
+        void onItemClick(BaseRecyclerAdapter adapter, View view, int position);
     }
 
     /**
      * 条目长按
      */
     public interface OnItemLongClickListener {
-        boolean onItemLongClick(AbstractRecyclerAdapter adapter, View view, int position);
+        boolean onItemLongClick(BaseRecyclerAdapter adapter, View view, int position);
     }
 
 
-    protected static class OnItemClickListenerImpl implements View.OnClickListener {
-        private AbstractRecyclerAdapter mAdapter;
+    private static class OnItemClickListenerImpl implements View.OnClickListener {
+        private BaseRecyclerAdapter mAdapter;
         private int mPosition;
 
-        public OnItemClickListenerImpl(AbstractRecyclerAdapter adapter, int position) {
+        public OnItemClickListenerImpl(BaseRecyclerAdapter adapter, int position) {
             this.mAdapter = adapter;
             this.mPosition = position;
         }
@@ -189,11 +189,11 @@ public abstract class AbstractRecyclerAdapter<T, VH extends RecyclerView.ViewHol
         }
     }
 
-    protected static class OnItemLongClickListenerImpl implements View.OnLongClickListener {
-        private AbstractRecyclerAdapter mAdapter;
+    private static class OnItemLongClickListenerImpl implements View.OnLongClickListener {
+        private BaseRecyclerAdapter mAdapter;
         private int mPosition;
 
-        public OnItemLongClickListenerImpl(AbstractRecyclerAdapter adapter, int position) {
+        public OnItemLongClickListenerImpl(BaseRecyclerAdapter adapter, int position) {
             this.mAdapter = adapter;
             this.mPosition = position;
         }

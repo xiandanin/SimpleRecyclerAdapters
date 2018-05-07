@@ -1,17 +1,15 @@
 package com.dyhdyh.adapter.example.adapters;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dyhdyh.adapter.example.R;
-import com.dyhdyh.adapters.AbstractRecyclerAdapter;
+import com.dyhdyh.adapters.BaseRecyclerAdapter;
+import com.dyhdyh.adapters.holder.BaseViewHolder;
 
 import java.util.List;
 
-public class TextAdapter extends AbstractRecyclerAdapter<String, TextAdapter.ItemViewHolder> {
+public class TextAdapter extends BaseRecyclerAdapter<String, TextAdapter.ItemViewHolder> {
 
     public TextAdapter(List<String> data) {
         super(data);
@@ -24,14 +22,15 @@ public class TextAdapter extends AbstractRecyclerAdapter<String, TextAdapter.Ite
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ItemViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_text, parent, false));
+        return new ItemViewHolder(R.layout.item_text, parent);
     }
 
-    protected static class ItemViewHolder extends RecyclerView.ViewHolder {
+    protected static class ItemViewHolder extends BaseViewHolder {
         private TextView tv;
-        public ItemViewHolder(View itemView) {
-            super(itemView);
-            tv=(TextView) itemView.findViewById(R.id.tv);
+
+        public ItemViewHolder(int layoutId, ViewGroup parent) {
+            super(layoutId, parent);
+            tv = (TextView) itemView.findViewById(R.id.tv);
         }
     }
 

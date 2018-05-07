@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.dyhdyh.adapter.example.adapters.TextAdapter;
-import com.dyhdyh.adapters.AbstractRecyclerAdapter;
+import com.dyhdyh.adapters.BaseRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,16 +34,16 @@ public class GeneralActivity extends AppCompatActivity {
         //普通RecyclerView Adapter
         textAdapter =new TextAdapter(DataUtils.getTextData());
         //ItemClick
-        textAdapter.setOnItemClickListener(new AbstractRecyclerAdapter.OnItemClickListener() {
+        textAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(AbstractRecyclerAdapter adapter, View view, int position) {
+            public void onItemClick(BaseRecyclerAdapter adapter, View view, int position) {
                 Toast.makeText(GeneralActivity.this, "Click "+adapter.getItem(position), Toast.LENGTH_SHORT).show();
             }
         });
         //ItemLongClick
-        textAdapter.setOnItemLongClickListener(new AbstractRecyclerAdapter.OnItemLongClickListener() {
+        textAdapter.setOnItemLongClickListener(new BaseRecyclerAdapter.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AbstractRecyclerAdapter adapter, View view, int position) {
+            public boolean onItemLongClick(BaseRecyclerAdapter adapter, View view, int position) {
                 Toast.makeText(GeneralActivity.this, "Long Click "+adapter.getItem(position), Toast.LENGTH_SHORT).show();
                 return true;
             }

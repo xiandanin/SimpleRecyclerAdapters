@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.dyhdyh.adapter.example.R;
 import com.dyhdyh.adapter.example.model.ItemInfo;
-import com.dyhdyh.adapters.AbstractRecyclerAdapter;
+import com.dyhdyh.adapters.BaseRecyclerAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
  * author  dengyuhan
  * created 2017/1/26 22:12
  */
-public class MultifyAdapter extends AbstractRecyclerAdapter<ItemInfo, RecyclerView.ViewHolder> {
+public class MultifyAdapter extends BaseRecyclerAdapter<ItemInfo, RecyclerView.ViewHolder> {
     private static final int VIEWTYPE_FROM = 1;
     private static final int VIEWTYPE_TO = 0;
     private static final int VIEWTYPE_TIME = 2;
