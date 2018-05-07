@@ -39,8 +39,8 @@
         name="Layout Name"
         type="string"
         constraints="layout|unique|nonempty"
-        suggest="item_${extractLetters(objectKind?lower_case)}"
-        default="item_simple"
+        suggest="recycle_item_${extractLetters(objectKind?lower_case)}"
+        default="recycle_item_simple"
         visibility="generateLayout"
         help="The name of the layout to create for the adapter" />
 
