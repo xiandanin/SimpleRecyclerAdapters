@@ -24,16 +24,21 @@ public class ${adapterClass} extends ${superAdapterClass}<${modelClass},${adapte
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 	<#if generateLayout>
-        return new ItemViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.${layoutName}, parent, false));
+        return new ItemViewHolder(R.layout.${layoutName}, parent);
 	<#else>
         return null;
 	</#if>
     }
 
-    protected static class ItemViewHolder extends RecyclerView.ViewHolder{
+    protected static class ItemViewHolder extends BaseViewHolder{
 
         public ItemViewHolder(View itemView) {
             super(itemView);
+        }
+
+
+        public ItemViewHolder(@LayoutRes int layoutId, ViewGroup parent) {
+            this(LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false));
         }
     }
 

@@ -12,9 +12,9 @@ import java.util.List;
  * created 2017/1/26 14:42
  */
 public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
-    private List<T> mData;
-    private OnItemClickListener mOnItemClickListener;
-    private OnItemLongClickListener mItemLongClickListener;
+    protected List<T> mData;
+    protected OnItemClickListener mOnItemClickListener;
+    protected OnItemLongClickListener mItemLongClickListener;
 
     public BaseRecyclerAdapter(List<T> data) {
         this.mData = data == null ? new ArrayList<T>() : data;
@@ -49,8 +49,22 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
 
     public abstract void onBindViewHolder(VH holder, int position, T item);
 
+    /**
+     * 条目数量
+     *
+     * @return
+     */
     @Override
     public int getItemCount() {
+        return mData.size();
+    }
+
+    /**
+     * 数据数量
+     *
+     * @return
+     */
+    public int getRawCount() {
         return mData.size();
     }
 
@@ -148,6 +162,10 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
 
     public List<T> getData() {
         return mData;
+    }
+
+    public void setData(List<T> data) {
+        this.mData = data;
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {

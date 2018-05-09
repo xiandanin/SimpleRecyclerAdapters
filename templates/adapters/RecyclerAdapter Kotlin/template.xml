@@ -2,10 +2,10 @@
 <template
     format="5"
     revision="5"
-    name="Recycler Adapter"
+    name="Recycler Adapter Kotlin"
     minApi="7"
     minBuildApi="14"
-    description="创建一个继承于BaseRecyclerAdapter的Adapter">
+    description="用Kotlin创建一个继承于BaseRecyclerAdapter的Adapter">
 
     <category value="Adapter" />
     <formfactor value="Mobile" />
@@ -56,7 +56,6 @@
         type="string"
         constraints="package"
         default="com.mycompany.myapp.adapters" />
-
 
     <!-- 128x128 thumbnails relative to template.xml -->
     <thumbs>
