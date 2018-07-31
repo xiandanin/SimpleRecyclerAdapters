@@ -136,7 +136,8 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
     public void removeItem(int position) {
         mData.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position, mData.size());
+        int itemCount = mData.size() - position;
+        notifyItemRangeChanged(position, itemCount);
     }
 
 
