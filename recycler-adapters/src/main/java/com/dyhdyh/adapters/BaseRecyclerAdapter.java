@@ -34,10 +34,10 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
         this.onBindViewHolder(holder, position, getItem(position));
         if (holder.itemView != null) {
             if (mOnItemClickListener != null) {
-                holder.itemView.setOnClickListener(new OnItemClickListenerImpl(this, position));
+                holder.itemView.setOnClickListener(new OnItemClickListenerImpl(this, holder));
             }
             if (mItemLongClickListener != null) {
-                holder.itemView.setOnLongClickListener(new OnItemLongClickListenerImpl(this, position));
+                holder.itemView.setOnLongClickListener(new OnItemLongClickListenerImpl(this, holder));
             }
         }
     }
@@ -193,33 +193,33 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
     }
 
 
-    private static class OnItemClickListenerImpl implements View.OnClickListener {
+    private static class OnItemClickListenerImpl<VH extends RecyclerView.ViewHolder> implements View.OnClickListener {
         private BaseRecyclerAdapter mAdapter;
-        private int mPosition;
+        private VH mHolder;
 
-        public OnItemClickListenerImpl(BaseRecyclerAdapter adapter, int position) {
+        public OnItemClickListenerImpl(BaseRecyclerAdapter adapter, VH holder) {
             this.mAdapter = adapter;
-            this.mPosition = position;
+            this.mHolder = holder;
         }
 
         @Override
         public void onClick(View v) {
-            mAdapter.mOnItemClickListener.onItemClick(mAdapter, v, mPosition);
+            mAdapter.mOnItemClickListener.onItemClick(mAdapter, v, mHolder.getLayoutPosition());
         }
     }
 
-    private static class OnItemLongClickListenerImpl implements View.OnLongClickListener {
+    private static class OnItemLongClickListenerImpl<VH extends RecyclerView.ViewHolder> implements View.OnLongClickListener {
         private BaseRecyclerAdapter mAdapter;
-        private int mPosition;
+        private VH mHolder;
 
-        public OnItemLongClickListenerImpl(BaseRecyclerAdapter adapter, int position) {
+        public OnItemLongClickListenerImpl(BaseRecyclerAdapter adapter, VH holder) {
             this.mAdapter = adapter;
-            this.mPosition = position;
+            this.mHolder = holder;
         }
 
         @Override
         public boolean onLongClick(View v) {
-            return mAdapter.mItemLongClickListener.onItemLongClick(mAdapter, v, mPosition);
+            return mAdapter.mItemLongClickListener.onItemLongClick(mAdapter, v, mHolder.getLayoutPosition());
         }
     }
 }
