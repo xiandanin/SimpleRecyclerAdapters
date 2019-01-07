@@ -2,8 +2,8 @@ ext {
     android =
             [
                     //版本号
-                    versionCode      : 9,
-                    versionName      : "1.1.0",
+                    versionCode      : 10,
+                    versionName      : "1.1.1",
 
                     //sdk版本
                     compileSdkVersion: 26,

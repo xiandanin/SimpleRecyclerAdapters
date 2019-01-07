@@ -2,6 +2,7 @@ package com.dyhdyh.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,6 +20,18 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
     public BaseRecyclerAdapter(List<T> data) {
         this.mData = data == null ? new ArrayList<T>() : data;
     }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
+    public int getItemViewType(T item) {
+        return 0;
+    }
+
+    @Override
+    public abstract VH onCreateViewHolder(ViewGroup parent, int viewType);
 
     @Override
     public void onBindViewHolder(VH holder, int position, List<Object> payloads) {
