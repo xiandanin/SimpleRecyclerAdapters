@@ -22,15 +22,6 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
     }
 
     @Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(position);
-    }
-
-    public int getItemViewType(T item) {
-        return 0;
-    }
-
-    @Override
     public abstract VH onCreateViewHolder(ViewGroup parent, int viewType);
 
     @Override
@@ -172,7 +163,6 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
         //notifyDataSetChanged();
         notifyItemRangeRemoved(0, mData.size());
     }
-
 
     public List<T> getData() {
         return mData;
