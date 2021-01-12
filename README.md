@@ -1,3 +1,12 @@
-```java
-implementation 'in.xiandan:recycler-adapters:1.2.0'
+```
+implementation 'in.xiandan:recycler-adapters:1.2.2'
+```
+
+```
+adapter.setOnItemClickListener { adapter, view, position ->
+
+}
+adapter.setOnItemLongClickListener { adapter, view, position -> 
+    
+}
 ```
