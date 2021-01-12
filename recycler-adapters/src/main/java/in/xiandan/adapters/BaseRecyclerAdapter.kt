@@ -162,4 +162,8 @@ abstract class BaseRecyclerAdapter<T, VH : RecyclerView.ViewHolder>(data: List<T
         fun onItemLongClick(adapter: BaseRecyclerAdapter<*, *>, view: View, position: Int): Boolean
     }
 
+    interface OnItemChildClickListener {
+        fun onItemChildClick(adapter: BaseRecyclerAdapter<*, *>, itemView: View, clickView: View, position: Int): Boolean
+    }
+
 }
