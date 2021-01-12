@@ -2,19 +2,20 @@ package `in`.xiandan.adapters
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 
 
 /**
  * Created by xiandanin on 2021/1/12 14:42
  */
-abstract class BaseRecyclerAdapter<T, VH : RecyclerView.ViewHolder>(data: List<T> = mutableListOf()) :
-        RecyclerView.Adapter<VH>() {
-    private var mData: List<T> = data
+abstract class BaseRecyclerAdapter<T, VH : RecyclerView.ViewHolder>(data: List<T>?) : RecyclerView.Adapter<VH>() {
+    private var mData: List<T> = data ?: mutableListOf()
 
     protected var mOnItemClickListener: OnItemClickListener? = null
     protected var mItemLongClickListener: OnItemLongClickListener? = null
 
+    @LayoutRes
     open fun onCreateViewHolderFormLayoutId(): Int {
         return 0
     }
@@ -31,11 +32,14 @@ abstract class BaseRecyclerAdapter<T, VH : RecyclerView.ViewHolder>(data: List<T
     }
 
     open fun onBindViewHolder(holder: VH, position: Int, item: T?, payloads: MutableList<Any>) {
-        this.onBindViewHolder(holder, position)
     }
 
     final override fun onBindViewHolder(holder: VH, position: Int, payloads: MutableList<Any>) {
-        this.onBindViewHolder(holder, position, getItem(position), payloads)
+        if (payloads.isEmpty()) {
+            this.onBindViewHolder(holder, position)
+        } else {
+            this.onBindViewHolder(holder, position, getItem(position), payloads)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -132,7 +136,11 @@ abstract class BaseRecyclerAdapter<T, VH : RecyclerView.ViewHolder>(data: List<T
 
     open fun setOnItemClickListener(listener: (adapter: BaseRecyclerAdapter<*, *>, view: View, position: Int) -> Unit) {
         mOnItemClickListener = object : OnItemClickListener {
-            override fun onItemClick(adapter: BaseRecyclerAdapter<*, *>, view: View, position: Int) {
+            override fun onItemClick(
+                    adapter: BaseRecyclerAdapter<*, *>,
+                    view: View,
+                    position: Int
+            ) {
                 listener(adapter, view, position)
             }
         }
@@ -148,7 +156,11 @@ abstract class BaseRecyclerAdapter<T, VH : RecyclerView.ViewHolder>(data: List<T
 
     open fun setOnItemLongClickListener(listener: (adapter: BaseRecyclerAdapter<*, *>, view: View, position: Int) -> Boolean) {
         mItemLongClickListener = object : OnItemLongClickListener {
-            override fun onItemLongClick(adapter: BaseRecyclerAdapter<*, *>, view: View, position: Int): Boolean {
+            override fun onItemLongClick(
+                    adapter: BaseRecyclerAdapter<*, *>,
+                    view: View,
+                    position: Int
+            ): Boolean {
                 return listener(adapter, view, position)
             }
         }
@@ -163,7 +175,12 @@ abstract class BaseRecyclerAdapter<T, VH : RecyclerView.ViewHolder>(data: List<T
     }
 
     interface OnItemChildClickListener {
-        fun onItemChildClick(adapter: BaseRecyclerAdapter<*, *>, itemView: View, clickView: View, position: Int)
+        fun onItemChildClick(
+                adapter: BaseRecyclerAdapter<*, *>,
+                itemView: View,
+                clickView: View,
+                position: Int
+        )
     }
 
 }
