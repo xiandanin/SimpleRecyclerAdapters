@@ -1,1 +1,3 @@
-include ':example', ':recycler-adapters', ':recycler-adapters-databinding'
+include ':recycler-adapters'
+include ':app'
+rootProject.name = "SimpleRecyclerAdapters"
