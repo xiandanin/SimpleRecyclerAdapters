@@ -163,7 +163,7 @@ abstract class BaseRecyclerAdapter<T, VH : RecyclerView.ViewHolder>(data: List<T
     }
 
     interface OnItemChildClickListener {
-        fun onItemChildClick(adapter: BaseRecyclerAdapter<*, *>, itemView: View, clickView: View, position: Int): Boolean
+        fun onItemChildClick(adapter: BaseRecyclerAdapter<*, *>, itemView: View, clickView: View, position: Int)
     }
 
 }
