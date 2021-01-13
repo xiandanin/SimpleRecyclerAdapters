@@ -14,4 +14,8 @@ abstract class ItemViewHolder<T> : BaseViewHolder {
     constructor(itemView: View) : super(itemView)
 
     abstract fun onBind(position: Int, item: T?)
+
+    open fun onBind(position: Int, item: T?, payloads: MutableList<Any>) {
+
+    }
 }
