@@ -1,7 +1,7 @@
 package in.xiandan.adapters.example.model;
 
 /**
- * author  dengyuhan
+ * author  xiandanin
  * created 2017/1/26 21:37
  */
 public class ItemInfo {

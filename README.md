@@ -1,5 +1,5 @@
 ```
-implementation 'in.xiandan:recycler-adapters:1.2.4'
+implementation 'in.xiandan:recycler-adapters:1.2.5'
 ```
 
 ```

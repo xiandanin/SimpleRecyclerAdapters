@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_text.view.*
 
 /**
- * Created by dengyuhan on 2021/1/12 15:07
+ * Created by xiandanin on 2021/1/12 15:07
  */
 class TextAdapter(data:List<String>) : BaseRecyclerAdapter<String, BaseViewHolder>(data) {
     override fun onCreateViewHolderFormLayoutId(): Int {

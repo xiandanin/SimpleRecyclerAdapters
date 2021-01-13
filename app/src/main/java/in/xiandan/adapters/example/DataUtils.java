@@ -7,7 +7,7 @@ import java.util.List;
 import in.xiandan.adapters.example.model.ItemInfo;
 
 /**
- * author  dengyuhan
+ * author  xiandanin
  * created 2017/1/26 16:04
  */
 public class DataUtils {

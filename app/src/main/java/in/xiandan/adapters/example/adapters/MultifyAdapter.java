@@ -20,7 +20,7 @@ import in.xiandan.adapters.example.model.ItemInfo;
 
 /**
  * 多布局RecyclerAdapter
- * author  dengyuhan
+ * author  xiandanin
  * created 2017/1/26 22:12
  */
 public class MultifyAdapter extends BaseRecyclerAdapter<ItemInfo, RecyclerView.ViewHolder> {
